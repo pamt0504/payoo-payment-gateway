@@ -1,7 +1,7 @@
 {
     "name": "payoo-payment-gateway",
     "version": "1.0.0",
-    "description": "Payment with payoo Wallet via QR code",
+    "description": "Payment with payoo",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
