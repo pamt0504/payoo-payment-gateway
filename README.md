@@ -3,7 +3,7 @@
 The plugin will make it easier to integrate Payoo payments.
 
 ## Process flow
-![Flow]()
+![Flow](https://raw.githubusercontent.com/pamt0504/payoo-payment-gateway/master/process-flow.png)
 
 ## Installation
 The first, Payoo partner must be successfully registered.
@@ -105,7 +105,7 @@ Pull requests are welcome
 ## Important
 Mail:  thao.pamt@gmail.com
 Skype: phamanmaithao10@gmail.com
-Documentation: 
+Documentation: (https://github.com/pamt0504/payoo-payment-gateway/blob/master/HD%20Tich%20Hop%20Thanh%20Toan%20Payoo_Js_v2.pdf)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
