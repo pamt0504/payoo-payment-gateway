@@ -2,7 +2,7 @@ import * as crypto from 'crypto';
 import * as moment from 'moment-timezone';
 import fetch from 'node-fetch';
 
-export class PayooModule {
+export class PayooPayment {
     private username: string;
     private shopId: string;
     private shopTitle: string;
@@ -40,6 +40,9 @@ export class PayooModule {
     }
 
     async createOrderRequest({ orderId, orderNumber, amount, returnUrl, notifyUrl }) {
+        if (!orderId || !orderNumber || !amount || !returnUrl || !notifyUrl) {
+            throw new Error('Missing parameter');
+        }
         const reqData = {
             data: this.createOrderXml({ orderId, orderNumber, returnUrl, amount, notifyUrl }),
             checksum: this.createSHA512(this.checksumKey + this.createOrderXml({ orderId, orderNumber, returnUrl, amount, notifyUrl })),
@@ -134,6 +137,10 @@ export class PayooModule {
     }
 
     async refundPayment({ OrderNo, PurchaseDate, Money, Description }) {
+        if (!OrderNo || !PurchaseDate || !Money || !Description) {
+            throw new Error('Missing parameter');
+        }
+
         const requestData = {
             OrderNo,
             Money,
