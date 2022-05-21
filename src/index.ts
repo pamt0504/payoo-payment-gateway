@@ -50,7 +50,7 @@ export class PayooPayment {
             // payment_group: 'CC,Bank-account',
         };
         try {
-            const result = await fetch(this.endpointCheckout, {
+            const result = await fetch(`${this.endpointCheckout}/v2/paynow/order/create`, {
                 method: 'POST',
                 body: JSON.stringify(reqData),
             });
@@ -153,7 +153,7 @@ export class PayooPayment {
             this.checksumKey +
             `{"OrderNo":"${OrderNo}","Money":${Money},"Description":"${Description}","ActionType":2,"PurchaseDate":"${PurchaseDate.substring(0, 8)}"}`,
         );
-        const res = await fetch(this.endpointRefund, {
+        const res = await fetch(`${this.endpointRefund}/refund`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

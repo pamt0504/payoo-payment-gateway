@@ -1,6 +1,6 @@
 {
     "name": "payoo-payment-gateway",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "description": "Payment with payoo",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -13,7 +13,6 @@
     },
     "keywords": [
         "payoo",
-        "payoo wallet",
         "payoo payment",
         "atm",
         "payoo sdk",

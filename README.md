@@ -22,6 +22,13 @@ import { PayooPayment } from 'payoo-payment-gateway';
 const HOST_WEBHOOK = process.env.HOST_WEBHOOK;
 
 /* constructor: username, shopId, shopTitle, checksumKey, endpointCheckout, shopDomain, endpointRefund, apiUsername, apiUserpassword, apiSignature => provided by Payoo*/
+/*  endpointCheckout:
+      sandbox:  https://newsandbox.payoo.com.vn
+      live:     https://www.payoo.vn
+    endpointRefund:
+      sandbox:  https://biz-sb.payoo.vn/BusinessRestAPI.svc
+      live:     https://biz.payoo.vn/BusinessRestAPI.svc */
+
 class PayooPaymentService {
     constructor(username, shopId, shopTitle, checksumKey, endpointCheckout, shopDomain, endpointRefund, apiUsername, apiUserpassword, apiSignature) {
       this.payooPayment = new PayooPayment({
