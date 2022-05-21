@@ -1,4 +1,4 @@
-export declare class PayooModule {
+export declare class PayooPayment {
     private username;
     private shopId;
     private shopTitle;
