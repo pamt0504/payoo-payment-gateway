@@ -1,6 +1,6 @@
 {
     "name": "payoo-payment-gateway",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Payment with payoo",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -15,7 +15,7 @@
         "payoo",
         "payoo wallet",
         "payoo payment",
-        "payoo node",
+        "atm",
         "payoo sdk",
         "payoo api",
         "payoo gateway",
@@ -29,7 +29,8 @@
     "license": "ISC",
     "dependencies": {
         "moment-timezone": "^0.5.34",
-        "node-fetch": "^2.6.1"
+        "node-fetch": "^2.6.1",
+        "payoo-payment-gateway": "^1.0.2"
     },
     "devDependencies": {
         "@types/node": "^17.0.34"

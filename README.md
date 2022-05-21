@@ -77,6 +77,8 @@ class PayooPaymentService {
   }
 
 /* The function for verify webhook request and payment */
+/* Get IP in headers 'x-forwarded-for' */
+
   verifyNotifyData({ ip, xml }) {
     try {
       const result = this.payooPayment.verifyNotifyData({ ip, xml });
