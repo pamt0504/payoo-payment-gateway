@@ -1,6 +1,7 @@
 # API Payoo Payment Gateway
 
 The plugin will make it easier to integrate Payoo payments.
+Pay easy ATM payment method
 
 ## Process flow
 ![Flow](https://raw.githubusercontent.com/pamt0504/payoo-payment-gateway/master/process-flow.png)
@@ -21,7 +22,9 @@ import { PayooPayment } from 'payoo-payment-gateway';
 /* HOST_WEBHOOK => Partner API. Used by Payoo to submit payment results by IPN method (server-to-server) method */
 const HOST_WEBHOOK = process.env.HOST_WEBHOOK;
 
-/* constructor: username, shopId, shopTitle, checksumKey, endpointCheckout, shopDomain, endpointRefund, apiUsername, apiUserpassword, apiSignature => provided by Payoo*/
+/* constructor: username, shopId, shopTitle, checksumKey, 
+endpointCheckout, shopDomain, endpointRefund, apiUsername, 
+apiUserpassword, apiSignature => provided by Payoo*/
 /*  endpointCheckout:
       sandbox:  https://newsandbox.payoo.com.vn
       live:     https://www.payoo.vn
@@ -85,7 +88,7 @@ class PayooPaymentService {
 
 /* The function for verify webhook request and payment */
 /* Get IP in headers 'x-forwarded-for' */
-
+/* Get XML from body.NotifyData */
   verifyNotifyData({ ip, xml }) {
     try {
       const result = this.payooPayment.verifyNotifyData({ ip, xml });
