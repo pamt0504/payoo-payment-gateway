@@ -98,7 +98,7 @@ export class PayooPayment {
 
     getDateValidity() {
         return moment()
-            .add(1, 'hours')
+            .add(1, 'days')
             .format('yyyyMMDDHHmmss'); //Request will get invalid after 1 hours
     }
     async verifyNotifyData({ ip, xml }) {
