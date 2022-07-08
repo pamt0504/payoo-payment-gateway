@@ -1,6 +1,6 @@
 {
     "name": "payoo-payment-gateway",
-    "version": "1.0.4",
+    "version": "1.0.7",
     "description": "Payment with payoo",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",

@@ -102,18 +102,15 @@ export class PayooPayment {
             .format('yyyyMMDDHHmmss'); //Request will get invalid after 1 hours
     }
     async verifyNotifyData({ ip, xml }) {
-        try {
-            const data = JSON.parse(Buffer.from(xml, 'base64').toString());
-            const result = JSON.parse(data.ResponseData);
-            const checksum = await this.createSHA512(this.checksumKey + data.ResponseData + ip);
-            // check signature
-            if (checksum.toUpperCase() !== data.Signature.toUpperCase()) {
-                throw new Error('The signature is incorrect.');
-            }
-            return result;
-        } catch (err) {
-            throw new Error('This order already paid.');
+        const data = JSON.parse(Buffer.from(xml, 'base64').toString());
+        const result = JSON.parse(data.ResponseData);
+        const checksum = await this.createSHA512(this.checksumKey + data.ResponseData + ip);
+        // check signature
+        if (checksum.toUpperCase() !== data.Signature.toUpperCase()) {
+            throw new Error('The signature is incorrect.');
         }
+        return result;
+
     }
 
     async verifyPayment({ status, session, order_no, checksum, totalAmount, paymentFee }) {
